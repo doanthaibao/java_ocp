@@ -11,11 +11,14 @@ import java.lang.annotation.Target;
 @interface Jak {
     
 }
-@Target(ElementType.TYPE)
+@Target({ElementType.TYPE, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 public @interface Age {
     int number() default 0;
-    String[] value();
+//    String[] value();
+    int value();
+    int t() default 10;
     Jak j = null;
+
 }
